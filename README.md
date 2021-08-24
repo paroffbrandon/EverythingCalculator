@@ -9,3 +9,6 @@ The first step is to add Area and Perimeter for different shapes, and Circumfere
 The next steps will fill in as the project progresses
 
 Most calculator functions will come in as different programs for ease of bug fixing and will later be compiled into one
+
+THIS WILL NOT HAVE A GUI
+That might be added in another version of the program, If I eventually get good enough I will try to make this work on phones or desktops as an actual application with GUI.
