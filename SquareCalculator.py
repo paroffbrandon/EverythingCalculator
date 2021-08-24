@@ -6,13 +6,13 @@ def findArea(l):
     return l * l
 
 def findPerimeter(l):
-    return l + l + l + l
+    return l * 4
 
 def findLength(A):
-    return math.sqrt(l)
+    return math.sqrt(A)
 
 def findLength(P):
-    return p / 4
+    return A / 4
 
 print("  Welcome to the Square Caclulator!")
 print("If you do not know the answer to the value, please answer 0")
