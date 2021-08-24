@@ -23,9 +23,9 @@ while True:
     a = input("What is the Area of the of the square? ")
 
     if ((a == 0 and p == 0) or (a == 0) or (p == 0)):
-        print("Your Length is ", l)
-        print("Your Area is ", findArea(l))
-        print("Your Perimeter is ", findPerimeter(l))
+        print("Your Length is " + str(l))
+        print("Your Area is " + str(findArea(l)))
+        print("Your Perimeter is " + str(findPerimeter(l)))
 
     elif (l == 0 and a == 0):
         print("Your Length is ", findlegnth(P))
