@@ -24,15 +24,16 @@ def start_rightTri():
 
 
         # Printng a demonstration of the what values are on the triangle
-        print("  |\")
+        print("  |\  ")
         print("s | \ h")
-        print("  |  \")
-        print("   ‾b‾")
-        print("      \n")
+        print("  |  \  ")
+        print("   ‾b‾  ")
+        print("        \n")
 
 
         b = input("What is the base of your Right Triangle? ") # Ask the user for the base of the Triangle.
         s = input("What is the side of your Right Triangle? ") # Ask the user for the side of your Triangle.
+        h = input("What is the hypotenuse of your Right Triangle? ") # Ask the user for the hypotenuse of the Triangle
         a = input("What is the area of your Right Triangle? ") # Ask the user for the total area of the Triangle.
         p = input("What is the perimeter of your Right Triangle? ") # Ask the user for the perimeter of the triangle
 
@@ -45,6 +46,8 @@ def start_rightTri():
             b = 0.0
         if (s == ""):
             s = 0.0
+        if (h == ""):
+            h = 0.0
         if (a == ""):
             a = 0.0
         if (p ==""):
@@ -54,6 +57,7 @@ def start_rightTri():
         # Convert all of the input variables into floats, instead of leaving them all as strings.
         b = float(b)
         s = float(s)
+        h = float(h)
         a = float(a)
         p = float(p)
 
@@ -61,28 +65,59 @@ def start_rightTri():
         # These aer placeholder variables to be used later. These will be used to keep the solved variables and originally entered values seperate. This seperation will make it easier to detect issues with entered values.
         b_solved = 0.0
         s_solved = 0.0
+        h_solved = 0.0
         a_solved = 0.0
         p_solved = 0.0
 
 
         # Check to make sure at least one of the variables aws supplied. If not, we do not have enough information to solve the other two variables
-        if (b == 0 and s == 0 and a == 0 and p == 0):
+        if (b == 0 and s == 0 and h == 0 and a == 0 and p == 0):
             print("Error: Not enough information was supplied! You need to enter the value of at lease one variable.")
 
 
-        # Solve for the missing values
-        elif (r != 0): # The user has provided the radius of the circle
-            r_solved = r # Pass through the value the user entered to the 'solved' variable.
-            c_solved = 2*PI*r # Determine the circle's circumference.
-            a_solved = PI*(r**2) # Determine the circle's area.
-        elif (c != 0): # The user has provided the circumference of the circle
-            r_solved = c/(2*PI) # Determine the circle's radius.
-            c_solved = c # Pass through the value the user entered as the 'solved variable.
-            a_solved = PI*((c/(2*PI))**2) # Determine the circle's area.
-        elif (a != 0): # The user has provided the radius of the circle
-            r_solved = math.sqrt((a/PI)) # Determine the circle's radius.
-            c_solved = 2*PI*(math.sqrt((a/PI))) # Determine the circle's circumference
-            a_solved = a # Pass through the value the user has entered to the 'sovled' variable.
+        # Solve for the missing values. This was the "Fun" part of the programming. ☺
+        elif (b != 0 and s != 0): # The user has provided the base and side length of the Right Triangle
+            b_solved = b # Pass through the value the user entered to the 'solved' variable.
+            s_solved = s # Pass through the value the user entered to the 'solved' variable.
+            h_solved = math.sqrt(((b**2)+(s**2)))# Determine the hypotenuse of the Triangle
+            a_solved = (s*b)/2# Determine the area of the Triangle
+            p_solved = (s+b)(math.sqrt(((b**2)+(s**2))))# Determine the Perimeter of the Triangle.
+        elif (b != 0 and h != 0):
+            b_solved = b # Pass through the value the user entered to the 'solved' variable.
+            s_solved = math.sqrt(((h**2)-(s**2))) # Determine the value the user entered to the 'solved' variable.
+            h_solved = h # Pass through the hypotenuse of the Triangle
+            a_solved = (s*(math.sqrt(((h**2)-(s**2)))))/2 # Determine the area of the Triangle
+            p_solved = (math.sqrt(((h**2)-(s**2))))+b+h # Determine the Perimeter of the Triangle.
+        elif (b != 0 and a != 0):
+            b_solved = b # Pass through the value the user entered to the 'solved' variable.
+            s_solved = (2*a)/b # Pass through the value the user entered to the 'solved' variable.
+            h_solved = math.sqrt(((((2*a)/b)**2)+(b**2))) # Determine the hypotenuse of the Triangle
+            a_solved = a # Determine the area of the Triangle
+            p_solved = ((2*a)/b)+b+(math.sqrt(((((2*a)/b)**2)+(b**2)))) # Determine the Perimeter of the Triangle.
+        elif (b != 0 and p != 0):
+            b_solved = b # Pass through the value the user entered to the 'solved' variable.
+            s_solved =  # Pass through the value the user entered to the 'solved' variable.
+            h_solved =  # Determine the hypotenuse of the Triangle
+            a_solved =  # Determine the area of the Triangle
+            p_solved = p # Determine the Perimeter of the Triangle.
+        elif (s != 0 and h != 0):
+            b_solved =  # Pass through the value the user entered to the 'solved' variable.
+            s_solved = s # Pass through the value the user entered to the 'solved' variable.
+            h_solved =  # Determine the hypotenuse of the Triangle
+            a_solved =  # Determine the area of the Triangle
+            p_solved =  # Determine the Perimeter of the Triangle.
+        elif (s != 0 and a != 0):
+            b_solved =  # Pass through the value the user entered to the 'solved' variable.
+            s_solved = s # Pass through the value the user entered to the 'solved' variable.
+            h_solved =  # Determine the hypotenuse of the Triangle
+            a_solved =  # Determine the area of the Triangle
+            p_solved =  # Determine the Perimeter of the Triangle.
+        elif (s != 0 and p != 0):
+            b_solved =  # Pass through the value the user entered to the 'solved' variable.
+            s_solved = s # Pass through the value the user entered to the 'solved' variable.
+            h_solved =  # Determine the hypotenuse of the Triangle
+            a_solved =  # Determine the area of the Triangle
+            p_solved =  # Determine the Perimeter of the Triangle.
 
 
         # This should never happen. If the script runs this, then something has been programmed wrong.
